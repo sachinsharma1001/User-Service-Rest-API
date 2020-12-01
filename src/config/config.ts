@@ -1,0 +1,22 @@
+export const config = {
+    "dev": {
+      "username": process.env.POSTGRESS_USERNAME,
+      "password": process.env.POSTGRESS_PASSWORD,
+      "database": process.env.POSTGRESS_DATABASE,
+      "host": process.env.POSTGRESS_HOST,
+      "dialect": process.env.POSTGRESS_DIALECT,
+      "aws_region": process.env.AWS_REGION,
+      "aws_profile": process.env.AWS_PROFILE,
+    },
+    "prod": {
+      "username": "",
+      "password": "",
+      "database": "udagram_prod",
+      "host": "",
+      "dialect": "postgres"
+    },
+    "jwt":{
+      "secret": "helloworld"
+    }
+  }
+  
