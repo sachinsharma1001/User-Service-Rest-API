@@ -1,5 +1,5 @@
 # Use NodeJS base image
-FROM node:13
+FROM sachinsharma1001/user-service-rest-api:latest
 
 # Create app directory
 WORKDIR /usr/src/app
