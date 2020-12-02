@@ -21,7 +21,7 @@ require('dotenv').config();
         next();
   });
 
-    app.use('/api/v0/', UserRouter)
+    app.use('/api/v0/users', UserRouter)
 
     app.get( "/", async ( req, res ) => {
         res.send( "/api/v0/" );
