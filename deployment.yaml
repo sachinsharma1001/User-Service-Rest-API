@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-service-rest-api
+  labels:
+    app: user-service-rest-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: user-service-rest-api
+  template:
+    metadata:
+      labels:
+        app: user-service-rest-api
+    spec:
+      containers:
+      - name: user-service-rest-api
+        image: sachinsharma1001/user-service-rest-api
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"       
+        ports:
+        - containerPort: 80

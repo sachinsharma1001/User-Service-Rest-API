@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: user-service-rest-api
+  labels:
+    run: user-service-rest-api
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    run: user-service-rest-api
+
