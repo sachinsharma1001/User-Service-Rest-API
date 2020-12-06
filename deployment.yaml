@@ -5,7 +5,7 @@ metadata:
   labels:
     app: user-service-rest-api
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: user-service-rest-api
@@ -17,12 +17,20 @@ spec:
       containers:
       - name: user-service-rest-api
         image: sachinsharma1001/user-service-rest-api
-        resources:
-          requests:
-            memory: "64Mi"
-            cpu: "250m"
-          limits:
-            memory: "1024Mi"
-            cpu: "500m"       
+        env:
+          - name: POSTGRESS_USERNAME
+            value: udagramsachindev
+          - name: POSTGRESS_PASSWORD
+            value: udagramsachindev
+          - name: POSTGRESS_DATABASE
+            value: udagramsachindev  
+          - name: POSTGRESS_HOST
+            value: udagram-microservices-dev.cp1awku8suyh.us-east-2.rds.amazonaws.com
+          - name: POSTGRESS_DIALECT
+            value: postgres 
+          - name: AWS_REGION
+            value: us-east-2
+          - name: AWS_PROFILE
+            value: default       
         ports:
-        - containerPort: 80
+        - containerPort: 8080
