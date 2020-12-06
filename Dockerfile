@@ -1,11 +1,13 @@
 # Use NodeJS base image
-FROM node:13
+FROM node:10
 
-ENV POSTGRESS_USERNAME = udagramsachindev
-ENV POSTGRESS_PASSWORD = udagramsachindev
-ENV POSTGRESS_DATABASE = udagramsachindev
-ENV POSTGRESS_HOST = udagram-microservices-dev.cp1awku8suyh.us-east-2.rds.amazonaws.com
-ENV POSTGRESS_DIALECT = postgres
+ENV POSTGRESS_USERNAME=udagramsachindev
+ENV POSTGRESS_PASSWORD=udagramsachindev
+ENV POSTGRESS_DATABASE=udagramsachindev
+ENV POSTGRESS_HOST=udagram-microservices-dev.cp1awku8suyh.us-east-2.rds.amazonaws.com
+ENV POSTGRESS_DIALECT=postgres
+ENV AWS_REGION=us-east-2
+ENV AWS_PROFILE=default
 
 # Create app directory
 WORKDIR /usr/src/app
