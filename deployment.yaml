@@ -16,21 +16,56 @@ spec:
     spec:
       containers:
       - name: user-service-rest-api
-        image: sachinsharma1001/user-service-rest-api
+        image: sachinsharma1001/user-service-rest-api:latest
+        imagePullPolicy: Always 
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"
+        livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 15  
+            periodSeconds: 20      
         env:
           - name: POSTGRESS_USERNAME
-            value: udagramsachindev
+            valueFrom:
+              configMapKeyRef:
+                name: env-config
+                key: POSTGRESS_USERNAME 
           - name: POSTGRESS_PASSWORD
-            value: udagramsachindev
+            valueFrom:
+              configMapKeyRef:
+                name: env-config
+                key: POSTGRESS_PASSWORD
           - name: POSTGRESS_DATABASE
-            value: udagramsachindev  
+            valueFrom:
+              configMapKeyRef:
+                name: env-config
+                key: POSTGRESS_DATABASE 
           - name: POSTGRESS_HOST
-            value: udagram-microservices-dev.cp1awku8suyh.us-east-2.rds.amazonaws.com
+            valueFrom:
+              configMapKeyRef:
+                name: env-config
+                key: POSTGRESS_HOST
           - name: POSTGRESS_DIALECT
-            value: postgres 
+            valueFrom:
+              configMapKeyRef:
+                name: env-config
+                key: POSTGRESS_DIALECT
           - name: AWS_REGION
-            value: us-east-2
+            valueFrom:
+              configMapKeyRef:
+                name: env-config
+                key: AWS_REGION
           - name: AWS_PROFILE
-            value: default       
+            valueFrom:
+              configMapKeyRef:
+                name: env-config
+                key: AWS_PROFILE     
         ports:
         - containerPort: 8080
