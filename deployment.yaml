@@ -31,9 +31,13 @@ spec:
               port: 8080
             initialDelaySeconds: 15  
             periodSeconds: 20      
-        envFrom:
-          - configMapRef:
-              name: env-config    
         ports:
         - containerPort: 8080
+        volumeMounts:
+          - name: env-config
+            mountPath: /usr/src/app/env-config
+      volumes:
+        - name: env-config
+          configMap:
+              env-config  
       restartPolicy: Always  
