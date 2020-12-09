@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: user-service-rest-api
-        image: sachinsharma1001/user-service-rest-api
+        image: sachinsharma1001/user-service-rest-api:latest
         imagePullPolicy: Always 
         resources:
           requests:
@@ -32,8 +32,6 @@ spec:
             initialDelaySeconds: 15  
             periodSeconds: 20      
         envFrom:
-          - secretRef:
-              name: env-secret
           - configMapRef:
               name: env-config    
         ports:
