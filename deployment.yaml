@@ -77,11 +77,11 @@ spec:
         - name: POSTGRESS_USERNAME
           valueFrom:
             secretKeyRef:
-              name: env-secret
+              name: env-config
               key: POSTGRESS_USERNAME
         - name: POSTGRESS_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: env-secret
+              name: env-config
               key: POSTGRESS_PASSWORD    
       restartPolicy: Always  
