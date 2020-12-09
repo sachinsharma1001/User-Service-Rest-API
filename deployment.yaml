@@ -39,5 +39,5 @@ spec:
       volumes:
         - name: env-config
           configMap:
-              env-config  
+              name: env-config  
       restartPolicy: Always  
