@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-config
+data:
+  AWS_MEDIA_BUCKET: udagram-microservices-bucket
+  AWS_PROFILE: default
+  AWS_REGION: us-east-2
+  JWT_SECRET: helloworld
+  POSTGRESS_DB: udagramsachindev
+  POSTGRESS_HOST: udagram-microservices-dev.cp1awku8suyh.us-east-2.rds.amazonaws.com
+  URL: http://localhost:8100
