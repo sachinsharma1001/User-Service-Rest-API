@@ -7,8 +7,9 @@ data:
   AWS_PROFILE: default
   AWS_REGION: us-east-2
   JWT_SECRET: helloworld
-  POSTGRESS_DB: udagramsachindev
+  POSTGRESS_DATABASE: udagramsachindev
+  POSTGRESS_DIALECT: postgres
   POSTGRESS_HOST: udagram-microservices-dev.cp1awku8suyh.us-east-2.rds.amazonaws.com
-  POSTGRES_USERNAME: udagramsachindev
-  POSTGRES_PASSWORD: udagramsachindev
+  POSTGRESS_USERNAME: udagramsachindev
+  POSTGRESS_PASSWORD: udagramsachindev
   URL: http://localhost:8100
